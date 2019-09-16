@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import TodoList from './Todo/TodoList';
+import TodoApp from './Todo/TodoApp';
 
 
 class App extends React.Component {
   render() {
     return (
-      <TodoList />
+      <div className="container">
+        <TodoApp />
+      </div>      
     );
   }
 }

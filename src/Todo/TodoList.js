@@ -1,12 +1,15 @@
 import React from 'react'
+import { isTemplateElement } from '@babel/types'
 
 class TodoList extends React.Component {
     render() {
         return (
-            <div>
-                <h1 className="text-center p-4"> Todo list</h1>
-            </div>
-        )
+          <ul>
+            {this.props.items.map(item => (
+              <li key={item.id}>{item.text} {item.id}</li>
+            ))}
+          </ul>
+        );
     }
 }
 
