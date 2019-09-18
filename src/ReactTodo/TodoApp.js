@@ -18,7 +18,6 @@ constructor (props) {
     this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.clearList = this.clearList.bind(this);
-    this.handleValidate = this.handleValidate.bind(this);
 };
 
 handleChange (e) {
@@ -32,13 +31,12 @@ handleSubmit (e) {
 
     const newItem = {
         id: this.state.id,
-        title: this.state.item,
-        hover: false
+        title: this.state.item
     }
     const updateItems = [...this.state.items, newItem];
 
     this.setState({
-        items: updateItems	,
+        items: updateItems,
         item: "",
         id: uuid(),
         editItem: false
@@ -71,19 +69,12 @@ handleEdit (id) {
     });
 };
 
-handleValidate () {
-    this.setState(prevState => ({
-        hover:!prevState.hover
-      }));
-};
-
 render () {
     return (
         <div className="container">
         <div className="row">
           <div className="col-10 mx-auto col-md-8 mt-4">
             <h3 className="text-capitalize text-center">Todo input</h3>
-            <button onClick={this.handleValidate} className={this.state.hover ? 'btn btn-primary': 'btn btn-danger'}></button>
             <TodoInput
               item={this.state.item}
               handleChange={this.handleChange}
@@ -95,7 +86,6 @@ render () {
               clearList={this.clearList}
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}
-              handleValidate={this.handleValidate}
             />
           </div>
         </div>
