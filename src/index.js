@@ -1,8 +1,8 @@
 //importe les dependances
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './App.css';
+import TodoApp from './ReactTodo/TodoApp'
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<TodoApp />,document.getElementById('app'));
