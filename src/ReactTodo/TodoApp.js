@@ -13,20 +13,15 @@ constructor (props) {
         item: "",
         editItem: false
     }
-    this.handleEdit = this.handleEdit.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-    this.clearList = this.clearList.bind(this);
 };
 
-handleChange (e) {
+handleChange = (e)  => {
     this.setState({
         item: e.target.value
     });
 };
 
-handleSubmit (e) {
+handleSubmit = (e) => {
     e.preventDefault();
 
     const newItem = {
@@ -43,13 +38,13 @@ handleSubmit (e) {
     });
 };
 
-clearList () {
+clearList = () => {
     this.setState({
         items: []
     });
 };
 
-handleDelete (id) {
+handleDelete = (id) => {
     const filteredItems = this.state.items.filter(item => item.id !== id);
 
     this.setState({
@@ -57,7 +52,7 @@ handleDelete (id) {
     });
 };
 
-handleEdit (id) {
+handleEdit = (id) => {
     const filteredItems = this.state.items.filter(item => item.id !== id);
     const selectedItem = this.state.items.find(item => item.id == id)
 
